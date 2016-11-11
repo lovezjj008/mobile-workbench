@@ -1,0 +1,180 @@
+.um-page{
+	background:#F8F8F8;
+}
+/* manager组件style */
+#uappmanager{
+	margin-top:10px;
+	background:#ffffff;
+}
+#um-sortable .um-small,#um-sortable .um-more{
+	width:25%;
+	float:left;
+	height:80px;
+	position:relative;
+	padding:10px;
+	text-align:center;
+}
+#um-sortable .um-delete {
+    display: none;
+    top: 4px;
+    left: 20px;
+    position: absolute;
+	width:16px;
+	height:16px;
+	background:url(../img/close.png) no-repeat;
+	background-size:16px 16px;
+}
+#um-sortable .um-dragli .um-delete{
+	display: block;
+}
+/*  */
+#application .um-content{
+	display: -webkit-box;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+#appclassify{
+	position:relative; 
+	width:25%; 
+	height:100%;
+}
+#appclassify ul{
+	width:100%; background:#fff;
+}
+#appclassify ul li{
+	height:45px; line-height:45px; 
+	padding-left:10px;
+	font-size:12px;
+	background: #f6f6f6;
+	border-left:2px solid #f6f6f6;
+}
+#appclassify ul li a{
+	display:block;
+	width:100%;
+	height:100%;
+	color:#666666;
+}
+#appclassify ul li.active{
+	background: #ffffff;
+	border-left:2px solid #007aff
+}
+#applist{
+	width:75%;
+	border-left:1px solid #E6E6E6;
+	overflow:scroll;
+}
+#applist .title{
+	font-size:12px;
+	font-weight:normal;
+	padding-left:10px;
+	line-height:25px;
+	color:#C2C2C2;
+	position:relative;
+}
+#applist .um-appitem{
+	overflow:hidden;
+}
+#applist .um-media-heading{
+	margin:0;
+}
+/* um-header-fixed组件 */
+.um-header-fixed{
+	width:100%;
+	position: fixed;
+	top: 0;
+	left:0;
+	padding:6px 10px;
+	z-index:99999;
+	background:rgba(255,255,255,0);
+}
+.um-scan{
+	text-align:center;
+	margin-right:10px;
+}
+.um-scan img{
+	width:21px;
+	height:20px;
+}
+.um-scan .f12{
+	color:#ffffff;
+}
+.um-input-group{
+	margin-top:3px;
+}
+.um-header-fixed .form-control:focus {outline: none;} 
+.um-header-fixed .form-control{
+	height:36px;
+	border-radius:5px 5px;
+	font-size:14px;
+	outline:none;
+}
+.um-input-group span[class^="t-"] + input.form-control{
+	padding-left:32px;
+	padding-right:36px;
+}
+.um-input-group span[class^="t-"]{
+	position:absolute;
+	z-index: 5;
+}
+.um-input-group span.t-search{
+	width:38px;
+	height:36px;
+	background:url(../img/fdj.png) no-repeat center center;
+	background-size:14px 14px;
+	left:0px;
+	top:0px;
+	
+}
+.um-input-group span.t-camera{
+	width:44px;
+	height:36px;
+	background:url(../img/camera.png) no-repeat center center;
+	background-size:20px 16px;
+	left:auto;
+	right:0;
+	top:0px;
+}
+.um-input-group .btn:not(:first-child):not(:last-child), .um-input-group .btn-bg:not(:first-child):not(:last-child), .um-input-group .um-btn:not(:first-child):not(:last-child), .um-input-group .form-control:not(:first-child):not(:last-child){
+	border-radius:5px;
+	background:rgba(255,255,255,0.9)
+}
+/* um-items */
+.um-grey{
+	color:#666666;
+}
+.um-items>ul>li{
+	width:25%;
+	float:left;
+	padding:10px;
+	background:#FFFFFF;
+}
+/* um-classify */
+.um-classify{
+	padding: 0 10px;
+}
+.um-classify .t{
+	padding: 10px 0;
+	line-height:1.2;
+	text-align:left;
+	position:relative;
+}
+.um-classify .t>span{
+	border-left:4px red solid;
+	padding-left:6px;
+}
+.um-classify>ul{
+	display: -webkit-box;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+.um-classify>ul>li{
+	width:23.5%;
+	padding:10px;
+	background:#FFFFFF;
+	margin-bottom:5px;
+}

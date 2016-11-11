@@ -1,2 +1,5 @@
-node_modules
-native
+.DS_Store
+node_modules/
+dist/
+npm-debug.log
+test/unit/coverage
