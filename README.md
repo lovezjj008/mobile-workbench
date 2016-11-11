@@ -2,7 +2,7 @@
 移动门户代码,fork from [iuap-mobile-workbench](https://github.com/iuapmobile/workbench)
 改动:
 基于vue2.0开发,对原有
-um-header,um-banner,umfooter等组件进行了组件封装
+um-header,um-banner,umfooter等组件进行了组件封装，代码都在src目录下
 
 > code for mobile workbench
 
