@@ -27,23 +27,23 @@
 #um-sortable .um-dragli .um-delete{
 	display: block;
 }
-/*  */
-#application .um-content{
-	display: -webkit-box;
-    display: box;
-    display: -webkit-flex;
-    display: flex;
-}
+/* delete by songhlc fix */
+/*#application .um-content{*/
+	/*display: -webkit-box;*/
+    /*display: box;*/
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+/*}*/
 #appclassify{
-	position:relative; 
-	width:25%; 
+	position:relative;
+	width:25%;
 	height:100%;
 }
 #appclassify ul{
 	width:100%; background:#fff;
 }
 #appclassify ul li{
-	height:45px; line-height:45px; 
+	height:45px; line-height:45px;
 	padding-left:10px;
 	font-size:12px;
 	background: #f6f6f6;
@@ -102,7 +102,7 @@
 .um-input-group{
 	margin-top:3px;
 }
-.um-header-fixed .form-control:focus {outline: none;} 
+.um-header-fixed .form-control:focus {outline: none;}
 .um-header-fixed .form-control{
 	height:36px;
 	border-radius:5px 5px;
@@ -124,7 +124,7 @@
 	background-size:14px 14px;
 	left:0px;
 	top:0px;
-	
+
 }
 .um-input-group span.t-camera{
 	width:44px;

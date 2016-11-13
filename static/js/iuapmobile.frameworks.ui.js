@@ -925,11 +925,12 @@ $("textarea.form-control").elastic();
             $target.attr('class', $target.data('originalClassList') + ' ' + "active");
         }
     }
-    $(function(){
+    //$(function(){
         //fix by songhlc 修改初始化的时机
-        window.Page = Page;
-        //UM.page = new Page();
-    })
+        UM.initPage = function(){
+          UM.page = new Page();
+        }
+    //})
 
     // 必须去除点击事件默认事件，否则会修改hash值，造成页面闪动
     $(document).on("click", "a[href^=#]", function(e){
