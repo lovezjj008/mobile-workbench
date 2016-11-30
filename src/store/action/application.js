@@ -4,19 +4,19 @@ function getList (success) {
   // baseservice.get('url', {}, success)
   let data = [
     {
-      'label': '询报价',
+      'label': '报价管理',
       'img': 'static/img/xbj.png',
-      'url': 'http: //uapma.yonyou.com: 8443/weixin/summerShow_web/index.html'
+      'url': '/mobile/supply/dist/index.html#!/qutation'
     },
     {
-      'label': '招投标',
+      'label': '销售管理',
       'img': 'static/img/ztb.png',
-      'url': 'http: //uapma.yonyou.com: 8443/weixin/summerShow_web/index.html'
+      'url': '/mobile/supply/dist/index.html#!/saleorderlist'
     },
     {
-      'label': '超市',
+      'label': '发票查询',
       'img': 'static/img/cs.png',
-      'url': 'http: //uapma.yonyou.com: 8443/weixin/summerShow_web/index.html'
+      'url': '/mobile/supply/dist/index.html#!/invoicelist'
     },
     {
       'label': '在线竞价',

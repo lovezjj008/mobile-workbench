@@ -184,7 +184,7 @@
 
 
 		_onTapStart: function (/**Event|TouchEvent*/evt) {
-			
+
 			var type = evt.type,
 				touch = evt.touches && evt.touches[0],
 				target = (touch || evt).target,
@@ -193,7 +193,7 @@
 				el = this.el,
 				that = this,
 				filter = options.filter;
-				
+
 			options.startTime = new Date().getTime();
 			options.startX = touch ? touch.pageX:null;
 			options.startY = touch?touch.pageY:null;
@@ -375,7 +375,7 @@
 				ghostRect = ghostEl.getBoundingClientRect();
 				_css(ghostEl, 'width', rect.width * 2 - ghostRect.width);
 				_css(ghostEl, 'height', rect.height * 2 - ghostRect.height);
-				
+
 				// Bind touch events
 				this.delayTime = setTimeout(function(){
 					$(".um-small").addClass("um-dragli")
@@ -384,7 +384,7 @@
 					_on(document, 'touchcancel', _this._onDrop);
 
 				},options.delay)
-				
+
 				this._loopId = setInterval(this._emulateDragOver, 150);
 			}
 			else {
@@ -604,7 +604,7 @@
 			this.options.endX = evt.changedTouches ? Number(evt.changedTouches[0].pageX) : null;
 			this.options.endY = evt.changedTouches ? Number(evt.changedTouches[0].pageY) : null;
 			if (target.className == "um-black" && this.options.endTime - this.options.startTime < 500 && this.options.endTime - this.options.startTime > 80 && !t.classList.contains("um-dragli") && this.options.endY - this.options.startY < 20&& this.options.endX - this.options.startX < 20){
-				
+
 				window.location = url;
 			}
 			var el = this.el;
@@ -1031,7 +1031,7 @@
 		this.options = options = ( options || {} );
 		this.arr = options.data || this.arr;
 		this.colum = options.colum || 4;
-		this.moreType = false; 
+		this.moreType = false;
 		this.scroller = null;
 		this.height = {};
 		this.init();
@@ -1052,7 +1052,7 @@
 			}
 			var sortableTemp = sortableTxtL + lis + more + sortableTxtR;
 			$(this.id).append(sortableTemp);
-			
+
 			this.runn();
 			this.close();
 			this.remove();
@@ -1069,7 +1069,7 @@
 		},
 		remove : function(){
 			$(".um-delete").on("touchstart",function(){
-				
+
 				$(this).parents(".um-small").remove();
 				return false;
 			});
@@ -1091,7 +1091,7 @@
 			//this.scroll();
 		},
 		nav : function(){
-			
+
 		},
 		provinceLoaded : function (){
 			var _this = this;
@@ -1120,10 +1120,10 @@
 				$(this).addClass("active").siblings().removeClass("active");
 				var height = -_this.height[dataId];
 				_this.Scroller.scrollTo(0,height,200);
-				
+
 			})
 		}
-		
+
 	}
 
 	$.fn.vvv = function(options) {

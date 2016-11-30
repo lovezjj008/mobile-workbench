@@ -16,6 +16,13 @@
     <todo-header slot="header"></todo-header>
     <todo></todo>
   </um-page>
+  <um-page :showHeader="true" id="iframe">
+    <div class="um-header" slot="header">
+      <a onclick="back()" class="um-back"></a>
+      <h3>{{title}}</h3>
+    </div>
+    <iframe :src="url" frameborder="0" width="100%" height="100%"></iframe>
+  </um-page>
 </div>
 </template>
 
@@ -35,6 +42,16 @@ export default {
   },
   mounted () {
     window.UM.initPage()
+    window.addEventListener('iframeChange', function (event) {
+      this.title = window.iframetitle
+      this.url = window.iframeurl
+    }.bind(this), false)
+  },
+  data () {
+    return {
+      title: '',
+      url: ''
+    }
   }
 }
 </script>
