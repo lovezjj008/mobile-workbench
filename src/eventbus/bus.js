@@ -7,5 +7,4 @@ Object.defineProperty(Vue.prototype, '$bus', {
     return this.$root.bus
   }
 })
-
 export default Bus

@@ -41,3 +41,9 @@
     }
   }
 </script>
+<style lang="less">
+  @import "../../css/base.less";
+  .um-footerbar-item.active {
+    color: @color-base;
+  }
+</style>

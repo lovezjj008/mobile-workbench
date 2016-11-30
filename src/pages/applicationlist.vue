@@ -1,8 +1,9 @@
+<!--app管理页面,选择需要添加到首页的管理页面-->
 <template>
   <div class="applicationlist">
     <div id="appclassify">
       <ul id="appcategory" >
-        <li v-for="item in categoryList"><a :attr-href="'#category'+item.categoryId">{{item.categoryName}}</a></li>
+        <li v-for="(item, index) in categoryList" :class="{active:(index==0)?true:false}"><a :attr-href="'#category'+item.categoryId">{{item.categoryName}}</a></li>
       </ul>
     </div>
     <div id="applist" class="um-applist">
@@ -43,9 +44,8 @@
       umSwitch
     },
     mounted () {
-      debugger
+//    调用iuap mobile的组件
       $('#appcategory').onePageNav()
-      $('#appcategory li').eq(0).addClass('active')
     },
     data () {
       return {
@@ -161,5 +161,49 @@
     -webkit-transform-origin: top center;
     transform-origin: top center;
     height: 100%;
+  }#appclassify{
+     position:relative;
+     width:25%;
+     height:100%;
+   }
+  #appclassify ul{
+    width:100%; background:#fff;
   }
+  #appclassify ul li{
+    height:45px; line-height:45px;
+    padding-left:10px;
+    font-size:12px;
+    background: #f6f6f6;
+    border-left:2px solid #f6f6f6;
+  }
+  #appclassify ul li a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:#666666;
+  }
+  #appclassify ul li.active {
+    background: #ffffff;
+    border-left: 2px solid rgba(241, 90, 74, 1);
+  }
+  #applist{
+    width:75%;
+    border-left:1px solid #E6E6E6;
+    overflow:scroll;
+  }
+  #applist .title{
+    font-size:12px;
+    font-weight:normal;
+    padding-left:10px;
+    line-height:25px;
+    color:#C2C2C2;
+    position:relative;
+  }
+  #applist .um-appitem{
+    overflow:hidden;
+  }
+  #applist .um-media-heading{
+    margin:0;
+  }
+
 </style>

@@ -3,17 +3,16 @@
  * @description http请求封装
  *
  * */
-import Vue from 'vue'
-import bus from '../eventbus/eventbus'
+import {Vue} from 'src/eventbus/bus'
 
 function error (response) {
   if (response.status === 500) {
-    bus.$emit('alert', {
+    Vue.$bus.$emit('alert', {
       msgtitle: '发生错误',
       msgcontent: '请稍后重试!',
       type: 'danger'
     })
-    bus.$emit('loading', {
+    Vue.$bus.$emit('loading', {
       show: false
     })
   }
@@ -28,13 +27,13 @@ function get (url, data, success) {
       }
     } else {
       if (responsebody.msg) {
-        bus.$emit('alert', {
+        Vue.$bus.$emit('alert', {
           msgtitle: '操作失败',
           msgcontent: responsebody.msg,
           type: 'danger'
         })
       }
-      bus.$emit('loading', {
+      Vue.$bus.$emit('loading', {
         show: false
       })
     }
@@ -50,13 +49,13 @@ function post (url, data, success) {
       }
     } else {
       if (responsebody.msg) {
-        bus.$emit('alert', {
+        Vue.$bus.$emit('alert', {
           msgtitle: '操作失败',
           msgcontent: responsebody.msg,
           type: 'danger'
         })
       }
-      bus.$emit('loading', {
+      Vue.$bus.$emit('loading', {
         show: false
       })
     }
@@ -71,13 +70,13 @@ function remove (url, data, success) {
       }
     } else {
       if (responsebody.msg) {
-        bus.$emit('alert', {
+        Vue.$bus.$emit('alert', {
           msgtitle: '操作失败',
           msgcontent: responsebody.msg,
           type: 'danger'
         })
       }
-      bus.$emit('loading', {
+      Vue.$bus.$emit('loading', {
         show: false
       })
     }

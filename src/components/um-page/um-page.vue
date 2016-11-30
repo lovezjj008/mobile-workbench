@@ -1,3 +1,4 @@
+<!--页面容器-->
 <template>
   <div class="um-page" :id="id">
     <div class="um-header" v-show="showHeader" >
@@ -33,3 +34,9 @@
     }
   }
 </script>
+<style lang="less">
+  @import '../../css/base.less';
+  .um-page {
+    background: @color-bg;
+  }
+</style>
