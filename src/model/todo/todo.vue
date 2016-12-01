@@ -1,13 +1,13 @@
 <!--首页快捷待办-->
 <template>
   <div class="ncontent" >
-    <div class="alist fl um-grid" v-for="list in lists" v-show="list.isShow">
+    <div class="alist fl um-grid bd-1px" v-for="list in lists" v-show="list.isShow">
       <a @click="iframeRedirect(list.url, list.modal)" >
         <div class="title tc">{{list.text}}</div>
         <div class="f12 mt5 tc">{{list.title}}</div>
       </a>
     </div>
-    <div class="alist fl um-grid nphoto">
+    <div class="alist fl um-grid nphoto bd-1px">
       <a href="#toDo" @click="showTodo">
         <img src="../../assets/img/add.png" width=20>
       </a>

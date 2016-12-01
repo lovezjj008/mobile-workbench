@@ -1,6 +1,6 @@
 <template>
   <ul class="um-list">
-    <li class="um-list-item" v-for="item in list" v-show="item.display">
+    <li class="um-list-item bd-1px-b" v-for="item in list" v-show="item.display">
       <div class="um-list-item-inner">
         <div class="um-list-item-body">
           {{item.title}}

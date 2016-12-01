@@ -1,10 +1,10 @@
 <template>
   <div class="um-footer">
     <div class="um-footerbar">
-      <a href="#" class="um-footerbar-item" :class="{active:item.active}" :data-tar="item.target"  v-for="item in menulist">
+      <router-link :to="item.target" class="um-footerbar-item" :class="{active:item.active}" :data-tar="item.target"  v-for="item in menulist">
         <div class="mb5" v-bind:class="item.iconfont"></div>
         <div class="f14 lh1">{{item.title}}</div>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -17,12 +17,12 @@
       return {
         menulist: [{
           title: '首页',
-          target: '#home',
+          target: 'home',
           iconfont: 'icon-home',
           active: false
         }, {
           title: '消息',
-          target: '#message',
+          target: 'msg',
           iconfont: 'icon-msg',
           active: false
         }, {
