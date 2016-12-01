@@ -1,8 +1,10 @@
 import todo from './todo/todo.vue'
-import todoHeader from './todo/todoHeader.vue'
+import todoMgr from './todo/todoMgr.vue'
+import todoMgrHeader from './todo/todoMgrHeader.vue'
 
 const myModel = {
-  todo,
-  todoHeader
+  todoMgr,
+  todoMgrHeader,
+  todo
 }
 module.exports = myModel

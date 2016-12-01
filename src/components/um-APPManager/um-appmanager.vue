@@ -11,8 +11,8 @@
     mounted () {
       action.getList((data) => {
         this.applist.data = data
-        let _app = new AppManager('#uappmanager', this.applist)
-        console.log(_app)
+        new AppManager('#uappmanager', this.applist)
+//        console.log(_app)
       })
     },
     data () {

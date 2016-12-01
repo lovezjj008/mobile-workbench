@@ -1,93 +1,75 @@
+<!--首页快捷待办-->
 <template>
-  <ul class="um-list">
-    <li class="um-list-item" v-for="item in list" v-show="item.display">
-      <div class="um-list-item-inner">
-        <div class="um-list-item-body">
-          {{item.title}}
-        </div>
-        <div class="um-list-item-right">
-          <um-switch :id="item.id" :ischecked="item.isShow" v-on:change="change"></um-switch>
-        </div>
-      </div>
-    </li>
-  </ul>
+  <div class="ncontent" >
+    <div class="alist fl um-grid" v-for="list in lists" v-show="list.isShow">
+      <a @click="iframeRedirect(list.url, list.modal)" >
+        <div class="title tc">{{list.text}}</div>
+        <div class="f12 mt5 tc">{{list.title}}</div>
+      </a>
+    </div>
+    <div class="alist fl um-grid nphoto">
+      <a href="#toDo" @click="showTodo">
+        <img src="../../assets/img/add.png" width=20>
+      </a>
+    </div>
+  </div>
 </template>
 <script>
-  import {umSwitch} from 'components/umindex'
+  import store from 'store'
+  import service from 'src/store/action/todo'
   import Bus from 'src/eventbus/bus'
   import EVENTLIST from 'src/eventbus/eventlist'
-  import _ from 'lodash'
-  import store from 'store'
+  import {TODO_CUR} from 'src/const'
 
   export default {
-    components: {
-      umSwitch
-    },
-    methods: {
-      change: function (id, isShow) {
-        let item = _.find(this.list, {id: id})
-        item.isShow = isShow
-        store.set('todo_cur', this.list)
-//        待办事项改变
-        Bus.$emit(EVENTLIST.TODO_CHANGE)
+    data () {
+      return {
+        lists: [],
+        defaultList: []
       }
     },
     mounted () {
-      Bus.$on(EVENTLIST.TODO_SEARCH, function (keyword) {
-        // 如果有关键字则按关键字查询并匹配出符合的条件
-        if (keyword) {
-          _.forEach(this.list, (o) => {
-            if (o.title.indexOf(keyword) === -1) {
-              o.display = false
-            } else {
-              o.display = true
-            }
-          })
+      this.queryCurTodo()
+//      监听自定义显示待办列表项
+      Bus.$on(EVENTLIST.TODO_CHANGE, () => {
+        this.lists = store.get(TODO_CUR)
+      })
+    },
+    methods: {
+      queryCurTodo: function () {
+        let todolist = store.get(TODO_CUR)
+        if (todolist) {
+          this.lists = todolist
         } else {
-          _.forEach(this.list, (o) => {
-            o.display = true
+          service.getList((response) => {
+            this.lists = response
+            store.set(TODO_CUR, response)
           })
         }
-      }.bind(this))
-      if (store.get('todo_cur')) {
-        this.list = store.get('todo_cur')
-      }
-    },
-    data () {
-      return {
-        list: [
-          {
-            id: 1,
-            text: 5,
-            title: '待定标',
-            isShow: false,
-            display: true
-          },
-          {
-            id: 2,
-            text: 5,
-            title: '待收货',
-            isShow: false
-          },
-          {
-            id: 3,
-            text: 5,
-            title: '待确认对账单',
-            isShow: false
-          },
-          {
-            id: 4,
-            text: 5,
-            title: '待发布',
-            isShow: false
-          }
-        ]
+      },
+      showTodo: function () {
+        window.UM.page.changePage({
+          target: '#todo',
+          isReverse: 0,
+          transition: 'um'
+        })
+      },
+      iframeRedirect (url, modal) {
+        var ev = new window.Event('iframeChange')
+        window.iframeurl = url
+        window.iframetitle = modal
+        window.dispatchEvent(ev)
+        window.UM.page.changePage({
+          target: '#iframe',
+          isReverse: 0,
+          transition: 'um'
+        })
       }
     }
   }
 </script>
 <style scoped>
-  .um-list-item-body{
-    padding-left:15px;
+  .ncontent{
+    margin-top: 10px;
   }
 </style>

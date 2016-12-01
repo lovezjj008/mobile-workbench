@@ -18,6 +18,7 @@
   import EVENTLIST from 'src/eventbus/eventlist'
   import _ from 'lodash'
   import store from 'store'
+  import {TODO_CUR} from 'src/const'
 
   export default {
     components: {
@@ -27,7 +28,7 @@
       change: function (id, isShow) {
         let item = _.find(this.list, {id: id})
         item.isShow = isShow
-        store.set('todo_cur', this.list)
+        store.set(TODO_CUR, this.list)
 //        待办事项改变
         Bus.$emit(EVENTLIST.TODO_CHANGE)
       }
@@ -49,38 +50,13 @@
           })
         }
       }.bind(this))
-      if (store.get('todo_cur')) {
-        this.list = store.get('todo_cur')
+      if (store.get(TODO_CUR)) {
+        this.list = store.get(TODO_CUR)
       }
     },
     data () {
       return {
         list: [
-          {
-            id: 1,
-            text: 5,
-            title: '待定标',
-            isShow: false,
-            display: true
-          },
-          {
-            id: 2,
-            text: 5,
-            title: '待收货',
-            isShow: false
-          },
-          {
-            id: 3,
-            text: 5,
-            title: '待确认对账单',
-            isShow: false
-          },
-          {
-            id: 4,
-            text: 5,
-            title: '待发布',
-            isShow: false
-          }
         ]
       }
     }

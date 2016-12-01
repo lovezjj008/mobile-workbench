@@ -1,7 +1,6 @@
 <template>
 <div>
   <um-page class="active" id="main">
-    <div slot="footer">footer</div>
     <router-view></router-view>
     <um-footer-custom slot="addtion"></um-footer-custom>
   </um-page>
@@ -13,8 +12,8 @@
     <application-list></application-list>
   </um-page>
   <um-page :showHeader="true" id="todo">
-    <todo-header slot="header"></todo-header>
-    <todo></todo>
+    <todo-mgr-header slot="header"></todo-mgr-header>
+    <todo-mgr></todo-mgr>
   </um-page>
   <um-page :showHeader="true" id="iframe">
     <div class="um-header" slot="header">
@@ -29,7 +28,7 @@
 <script>
 import {umPage, umFooterCustom} from 'components/umindex'
 import applicationList from 'pages/applicationlist.vue'
-import {todo, todoHeader} from 'model/modelindex'
+import {todoMgr, todoMgrHeader} from 'model/modelindex'
 
 export default {
   name: 'app',
@@ -37,8 +36,8 @@ export default {
     umPage,
     umFooterCustom,
     applicationList,
-    todo,
-    todoHeader
+    todoMgr,
+    todoMgrHeader
   },
   mounted () {
     window.UM.initPage()

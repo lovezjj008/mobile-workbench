@@ -3,18 +3,19 @@
     <div id="home" class="active">
       <um-header></um-header>
       <um-swiper></um-swiper>
-      <um-todo></um-todo>
+      <todo></todo>
       <um-appmanager></um-appmanager>
     </div>
   </div>
 </template>
 <script>
-  import {umHeader, umTodo, umAppmanager, umSwiper} from 'components/umindex'
+  import {umHeader, umAppmanager, umSwiper} from 'components/umindex'
+  import {todo} from 'model/modelindex'
 
   export default {
     components: {
       umHeader,
-      umTodo,
+      todo,
       umAppmanager,
       umSwiper
     }

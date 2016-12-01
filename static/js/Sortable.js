@@ -599,13 +599,14 @@
 			this.options.endTime = new Date().getTime();
 			var target = evt.target.parentNode;
 			var url  = target.getAttribute("data-url");
+      var title = $(target).find('.f12').html();
 			var t = target.parentNode;
 			this.options.endX = evt.changedTouches ? Number(evt.changedTouches[0].pageX) : null;
 			this.options.endY = evt.changedTouches ? Number(evt.changedTouches[0].pageY) : null;
 			if (target.className == "um-black" && this.options.endTime - this.options.startTime < 500 && this.options.endTime - this.options.startTime > 80 && !t.classList.contains("um-dragli") && this.options.endY - this.options.startY < 20&& this.options.endX - this.options.startX < 20){
         var ev = new Event('iframeChange');
           window.iframeurl = url;
-          window.iframetitle='test';
+          window.iframetitle=title;
 
           window.dispatchEvent(ev);
           window.UM.page.changePage({
